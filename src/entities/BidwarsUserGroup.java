@@ -1,4 +1,4 @@
-package model;
+package entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -23,7 +23,7 @@ public class BidwarsUserGroup implements Serializable {
 	private String name;
 
 	//bi-directional many-to-one association to BidwarsUser
-	@OneToMany(mappedBy="bidwarsUserGroup")
+	@OneToMany(mappedBy="BidwarsUserGroup")
 	private List<BidwarsUser> bidwarsUsers;
 
 	public BidwarsUserGroup() {
