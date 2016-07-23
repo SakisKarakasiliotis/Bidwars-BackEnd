@@ -1,7 +1,5 @@
 package db;
 
-import entities.BidwarsUser;
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,52 +7,50 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
+import entities.BidwarsProduct;
 
-public class UserDB {
-
-    
-    @SuppressWarnings("unchecked")
-	public List<BidwarsUser> getBidwarsUsers()
+public class ProductDB {
+	@SuppressWarnings("unchecked")
+	public List<BidwarsProduct> getBidwarsProducts()
     {
-        List<BidwarsUser> users = null;
+        List<BidwarsProduct> products = null;
         EntityManager em = JPAResource.factory.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         
         //Query q = em.createQuery("Select u from User u");
-        Query q = em.createNamedQuery("User.findAll");
-        users =  q.getResultList();
+        Query q = em.createNamedQuery("Product.findAll");
+        products =  q.getResultList();
 		
         tx.commit();
         em.close();
-        return users;
+        return products;
     }
-    
-    public BidwarsUser find(String username, String password)
+	
+	public BidwarsProduct find(String name)
     {
-    	BidwarsUser user = null;
+    	BidwarsProduct product = null;
         
         EntityManager em = JPAResource.factory.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         
-        Query q = em.createQuery("Select u from BidawarsUser u where u.username = :username and u.password = :password");
-        q.setParameter("username", username);
-        q.setParameter("password", password);
-        List users =  q.getResultList();
+        Query q = em.createQuery("Select p from BidwarsProduct p where p.name = :name");
+        q.setParameter("name", name);        
+        List products =  q.getResultList();
         tx.commit();
         em.close();
         
-        if (users != null && users.size() == 1)
+        if (products != null && products.size() == 1)
         {
-            user = (BidwarsUser) users.get(0);
+            product = (BidwarsProduct) products.get(0);
         }
 
-        return user;
+        return product;
         
     }
-    
-    public int insertUser(BidwarsUser user)
+	
+	public int insertProduct(BidwarsProduct product)
     {
         int id = -1;
         EntityManager em = JPAResource.factory.createEntityManager();
@@ -62,9 +58,9 @@ public class UserDB {
         tx.begin();
         try 
         {
-            em.persist(user);
+            em.persist(product);
             em.flush();
-            id = user.getId();
+            id = product.getId();
             tx.commit();
             return id;
         }
@@ -78,23 +74,21 @@ public class UserDB {
             em.close();
         }
     }
-    
-    public BidwarsUser getById(int id)
+	public BidwarsProduct getById(int id)
     {
-    	BidwarsUser user = null;
+		BidwarsProduct product = null;
         
         EntityManager em = JPAResource.factory.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         
-        user =em.find(BidwarsUser.class, id);
+        product =em.find(BidwarsProduct.class, id);
 	
         tx.commit();
         em.close();
         
         
-        return user;
+        return product;
         
     }
-    
 }
