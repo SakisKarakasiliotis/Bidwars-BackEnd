@@ -9,7 +9,6 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import entities.BidwarsCategory;
-import entities.BidwarsProduct;
 
 public class CategoryDB {
 	@SuppressWarnings("unchecked")
