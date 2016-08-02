@@ -15,9 +15,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 
 import db.CategoryDB;
-import db.ProductDB;
 import model.BidwarsCategory;
-import model.BidwarsProduct;
 
 @Path("/categories")
 public class CategoryEndpoint {

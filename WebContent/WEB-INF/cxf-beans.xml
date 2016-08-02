@@ -9,15 +9,69 @@
 	http://cxf.apache.org/schemas/jaxrs.xsd">
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<bean id="Users" class="rest.UserEndpoint" />
+	<bean id="UserGroups" class="rest.UserGroupsEndpoint" />
+	
+	<bean id="Products" class="rest.ProductEndpoint" />
+	
+	<bean id="Categories" class="rest.CategoryEndpoint" />
+	
+	<bean id="Bids" class="rest.BidEndpoint" />
+	
+	
 	<jaxrs:server id="base" address="/">	
 		<jaxrs:serviceBeans>
 			<ref bean="Users"/>
 		</jaxrs:serviceBeans>
+		
 		<jaxrs:providers>
 			<!-- bean class="utilities.CustomJSONProvider"/-->
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
 		</jaxrs:providers>
+		
+	</jaxrs:server>
+	<jaxrs:server id="base2" address="/">	
+		<jaxrs:serviceBeans>
+			<ref bean="UserGroups"/>
+		</jaxrs:serviceBeans>
+		
+		<jaxrs:providers>
+			<!-- bean class="utilities.CustomJSONProvider"/-->
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+		</jaxrs:providers>
+		
+	</jaxrs:server>
+	<jaxrs:server id="base3" address="/">	
+		<jaxrs:serviceBeans>
+			<ref bean="Products"/>
+		</jaxrs:serviceBeans>
+		
+		<jaxrs:providers>
+			<!-- bean class="utilities.CustomJSONProvider"/-->
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+		</jaxrs:providers>
+		
+	</jaxrs:server>
+	<jaxrs:server id="base4" address="/">	
+		<jaxrs:serviceBeans>
+			<ref bean="Categories"/>
+		</jaxrs:serviceBeans>
+		
+		<jaxrs:providers>
+			<!-- bean class="utilities.CustomJSONProvider"/-->
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+		</jaxrs:providers>
+		
+	</jaxrs:server>
+	<jaxrs:server id="base5" address="/">	
+		<jaxrs:serviceBeans>
+			<ref bean="Bids"/>
+		</jaxrs:serviceBeans>
+		
+		<jaxrs:providers>
+			<!-- bean class="utilities.CustomJSONProvider"/-->
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+		</jaxrs:providers>
+		
 	</jaxrs:server>
 
-	 
 </beans>

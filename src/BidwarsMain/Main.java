@@ -17,9 +17,10 @@ public class Main {
 	
 	public static void main(String[] args)
 	{
+		System.out.println("Hello project can do stuff");
 		BidwarsUser user = new BidwarsUser();
 		user.setID(100);
-		
+		System.out.println(user);
 		BidwarsUserWrapper wrap = new BidwarsUserWrapper();
 		
 		BidwarsUser[] users = new BidwarsUser[10];
