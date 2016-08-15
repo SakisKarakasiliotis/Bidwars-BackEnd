@@ -1,10 +1,9 @@
 package entities;
 
-import javax.annotation.Generated;
+
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-import java.util.Date;
-import java.util.List;
+
 
 @StaticMetamodel(BidwarsCategory.class)
 public class BidwarsCategory_ {

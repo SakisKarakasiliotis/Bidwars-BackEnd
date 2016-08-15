@@ -37,7 +37,7 @@ public class ProductDB {
         
         Query q = em.createQuery("Select p from BidwarsProduct p where p.name = :name");
         q.setParameter("name", name);        
-        List products =  q.getResultList();
+        List<?> products =  q.getResultList();
         tx.commit();
         em.close();
         

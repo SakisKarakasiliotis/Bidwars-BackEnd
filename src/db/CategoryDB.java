@@ -37,7 +37,7 @@ public class CategoryDB {
         
         Query q = em.createQuery("Select p from BidwarsCategory p where p.name = :name");
         q.setParameter("name", name);        
-        List categories =  q.getResultList();
+        List<?> categories =  q.getResultList();
         tx.commit();
         em.close();
         

@@ -37,7 +37,7 @@ public class UserGroupDB {
         
         Query q = em.createQuery("Select u from BidawarsUserGroup u where u.name = :name");
         q.setParameter("name", name);
-        List usegroups =  q.getResultList();
+        List<?> usegroups =  q.getResultList();
         tx.commit();
         em.close();
         

@@ -1,12 +1,9 @@
 package model;
 
 
-import java.io.Serializable;
-import javax.persistence.*;
-
 import entities.BidwarsUser;
 
-import java.util.Date;
+
 import java.util.List;
 
 

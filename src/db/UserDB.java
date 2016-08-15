@@ -41,7 +41,7 @@ public class UserDB {
         Query q = em.createQuery("Select u from BidawarsUser u where u.username = :username and u.password = :password");
         q.setParameter("username", username);
         q.setParameter("password", password);
-        List users =  q.getResultList();
+		List<?> users =  q.getResultList();
         tx.commit();
         em.close();
         

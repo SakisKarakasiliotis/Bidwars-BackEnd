@@ -1,6 +1,6 @@
 package entities;
 
-import javax.annotation.Generated;
+
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import java.util.Date;

@@ -11,6 +11,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import model.BidwarsUser;
 import model.BidwarsUserWrapper;
+import model.BidwarsCategory;
+import model.BidwarsCategoryWrapper;
 
 
 public class Main {
@@ -19,10 +21,13 @@ public class Main {
 	{
 		System.out.println("Hello project can do stuff");
 		BidwarsUser user = new BidwarsUser();
+		BidwarsCategory cat = new BidwarsCategory();
+		cat.setID(100);
 		user.setID(100);
 		System.out.println(user);
 		BidwarsUserWrapper wrap = new BidwarsUserWrapper();
-		
+		BidwarsCategoryWrapper wrap2 = new BidwarsCategoryWrapper();
+		System.out.println(wrap2);
 		BidwarsUser[] users = new BidwarsUser[10];
 		for (int i=0; i<10; i++)
 		{

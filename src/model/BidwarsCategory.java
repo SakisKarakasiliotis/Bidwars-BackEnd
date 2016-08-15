@@ -1,9 +1,6 @@
 package model;
 
-import java.io.Serializable;
-import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+
 
 public class BidwarsCategory {
 	

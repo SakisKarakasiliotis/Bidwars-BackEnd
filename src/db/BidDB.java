@@ -36,7 +36,7 @@ public class BidDB {
         
         Query q = em.createQuery("Select p from BidwarsBid p where p.id = :id");
         q.setParameter("id", id);        
-        List bids =  q.getResultList();
+        List<?> bids =  q.getResultList();
         tx.commit();
         em.close();
         
