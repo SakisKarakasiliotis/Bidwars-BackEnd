@@ -21,6 +21,7 @@ import model.BidwarsUser;
 public class UserEndpoint {
 
 	@POST
+	@Path("/save")
 	@Consumes({ "application/json" })
 	public Response create(final BidwarsUser user) {
 		entities.BidwarsUser userd = new entities.BidwarsUser();
@@ -59,6 +60,7 @@ public class UserEndpoint {
 	@GET
 	@Produces({ "application/json" })
 	public List<BidwarsUser> listAll() {
+		System.out.println("entering users");
 		UserDB userDao = new UserDB();
 		List<entities.BidwarsUser> usersd = userDao.getBidwarsUsers();
 		List<BidwarsUser> users = null;
@@ -77,7 +79,7 @@ public class UserEndpoint {
 			}
 		}
 		
-		
+		System.out.println("exiting users");
 		return users;
 	}
 

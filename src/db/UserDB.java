@@ -21,8 +21,8 @@ public class UserDB {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         
-        //Query q = em.createQuery("Select u from User u");
-        Query q = em.createNamedQuery("User.findAll");
+        Query q = em.createQuery("SELECT b FROM BidwarsUser b");
+//        Query q = em.createNamedQuery("User.findAll");
         users =  q.getResultList();
 		
         tx.commit();
