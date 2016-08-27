@@ -28,7 +28,7 @@
 		</jaxrs:serviceBeans>
 		
 		<jaxrs:providers>
-			<!-- bean class="utilities.CustomJSONProvider"/-->
+			<bean class="utilities.CustomJSONProvider"/>
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
 		</jaxrs:providers>
 		

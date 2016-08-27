@@ -9,9 +9,9 @@ public class CustomJSONProvider extends JacksonJsonProvider {
 	// this class exists so we can customize the object mapper
 	// and therefore the way that the JSON is produced
 	 public CustomJSONProvider() {
+		 System.out.println("I am into constructor");
 	    ObjectMapper mapper = new ObjectMapper();
 	    mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, true);
-	    
 	    this._mapperConfig.setMapper(mapper);
 	 }
 }
