@@ -29,6 +29,12 @@ public class UserEndpoint {
 		userd.setSurname(user.getSurname());
 		userd.setUsername(user.getUsername());
 		userd.setPassword(user.getPassword());
+		userd.setEmail(user.getEmail());
+		userd.setUserKey(user.getUser_key());
+		userd.setBidwarsUserGroup(1);
+
+
+
 		UserDB userDao = new UserDB();
 		int id = userDao.insertUser(userd);
 		return Response.created(
@@ -79,7 +85,7 @@ public class UserEndpoint {
 			}
 		}
 		
-		System.out.println("exiting users");
+		System.out.println("exiting users"+users);
 		return users;
 	}
 

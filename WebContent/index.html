@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome to Bidwars</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 <style>
 	a{
 		display: block;
@@ -16,6 +18,7 @@ border-radius: 6px;
 text-decoration: none;
 text-align: center;
 line-height: 50px;
+margin-top:10px;
 	}
 	a:hover{
 		color: white;
@@ -32,6 +35,34 @@ line-height: 50px;
 	<h1>Select a webservice:</h1>
 	
 	<a href="http://localhost:8080/Bidwars_ham/services/users">Users WS</a>
+	<a href="http://localhost:8080/Bidwars_ham/services/bids">Bids WS</a>
 	</div>
 </body>
+  <script type="text/javascript">
+        console.log("ola kala");
+      
+            $.ajax({
+       type: 'GET',
+       url: 'http://localhost:8080/Bidwars_ham/services/users',
+       dataType: 'json',
+       success: function (response) {
+           console.log(response);
+       },
+       error: function (response) {
+           alert("Error");
+       }
+       
+      
+   });
+           var data={name:"sakis", username:"peos", password:"peos", surname:"peos", email:"dion@dion.gr", user_key:"kjhdfskjhdgs", user_group:1};
+            $.ajax({
+                url: 'http://localhost:8080/Bidwars_ham/services/users/save',
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                complete: function(response){
+                	console.log(response)
+                }
+            });
+    </script>
 </html>

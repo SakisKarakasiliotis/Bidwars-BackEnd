@@ -63,9 +63,8 @@ public class BidwarsUser implements Serializable {
 	private List<BidwarsProduct> bidwarsProducts;
 
 	//bi-directional many-to-one association to BidwarsUserGroup
-	@ManyToOne
-	@JoinColumn(name="user_group")
-	private BidwarsUserGroup BidwarsUserGroup;
+	
+	private Integer BidwarsUserGroup;
 
 	public BidwarsUser() {
 	}
@@ -250,12 +249,12 @@ public class BidwarsUser implements Serializable {
 		return bidwarsProduct;
 	}
 
-	public BidwarsUserGroup getBidwarsUserGroup() {
+	public Integer getBidwarsUserGroup() {
 		return this.BidwarsUserGroup;
 	}
 
-	public void setBidwarsUserGroup(BidwarsUserGroup bidwarsUserGroup) {
-		this.BidwarsUserGroup = bidwarsUserGroup;
+	public void setBidwarsUserGroup(Integer integer) {
+		this.BidwarsUserGroup = integer;
 	}
 
 }

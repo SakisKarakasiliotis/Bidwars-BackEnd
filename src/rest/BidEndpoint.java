@@ -75,7 +75,8 @@ public class BidEndpoint {
 			}
 		}
 		
-		
+		System.out.println("exiting users"+bids);
+
 		return bids;
 	}
 	

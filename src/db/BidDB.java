@@ -18,8 +18,8 @@ public class BidDB {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         
-        //Query q = em.createQuery("Select u from User u");
-        Query q = em.createNamedQuery("Bid.findAll");
+        Query q = em.createQuery("Select u from BidwarsBid u");
+//        Query q = em.createNamedQuery("Bid.findAll");
         bids =  q.getResultList();
 		
         tx.commit();
